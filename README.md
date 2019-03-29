@@ -33,10 +33,23 @@ https://dev.to/hasurahq/vue-and-graphql-with-hasura-video-course-3mpp
 
 https://docs.hasura.io/1.0/graphql/manual/getting-started/heroku-simple.html
 
-local
-https://vue-hasura-marten338395.codeanyapp.com/
 
-dev
+frontend (vue)
+http(s)://vue-hasura-cms-mtc.codeanyapp.com
+
+backend (hasura)
 https://vue-hasura-cms.herokuapp.com/console
 
+optional 
 https://elements.heroku.com/addons/newrelic
+
+
+postgres enum examples:
+https://docs.hasura.io/1.0/graphql/manual/schema/enums.html
+CREATE TYPE film_status AS ENUM ('future', 'present', 'past');
+
+ALTER TABLE film
+  ALTER COLUMN status TYPE film_status using status::film_status;
+
+ALTER TABLE articles
+    RENAME TO article
